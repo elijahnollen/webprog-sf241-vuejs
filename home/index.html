@@ -15,10 +15,10 @@
        <h1 class="text-center title">Personal Profile Web page - Elijah Nollen</h1>
   </header>
 
-<section class="bg-about p-4 mb-3 rounded-3 border border-dark">
-  <h2 class = "title">About Me</h2>
-    <p class = "body">Hi! I'm Eli</p>
-</section>
+ <div id="app">
+  {{ message }}
+  </div>
+
 
 
   <div class="row g-3">
@@ -73,7 +73,6 @@
       <div class="bg-goals p-4 h-300 rounded-3 border border-dark">
         <h4 class = "title">Goals In Life / Dream</h4>
         <ul class = "body">
-          <li>Become consistent, disciplined, and always open to learning</li>
           <li>Strengthen my technical and analytical skills beyond the classroom</li>
           <li>Maintain balance, grow academically while still enjoying life</li>
           <li>Become successful not only financially but also in making a positive impact on others</li>
@@ -83,10 +82,6 @@
     </div>
 
   </div>
-  </div>
-
-  <div id="app">
-  {{ message }}
   </div>
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

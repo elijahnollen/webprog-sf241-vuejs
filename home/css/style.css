@@ -1,7 +1,38 @@
+.body  {
+  font-family: Verdana, sans-serif;
+}
 
-#app {
-    display: inline-block;
-    padding: 10px;
-    font-size: x-large;
-    background-color: lightgreen;
-    }
+.title {
+  font-family: Georgia, serif;
+
+}
+
+.bg-header { 
+  background-color: #f7d98c; }
+
+.bg-about { 
+  background-color: #f0a0a9;} 
+
+.bg-left { 
+  background-color: #d8e5f2; }
+
+.bg-course { 
+  background-color: #c7c6e0; } 
+
+.bg-gallery { 
+  background-color: #b0e0e6; } 
+
+.bg-it { 
+  background-color: #f7d98c; }   
+
+.bg-hobbies { 
+  background-color: #b8e7c1; } 
+
+.bg-goals { 
+  background-color: #d8e5f2; }  
+
+.h-300 { 
+  min-height: 300px; } 
+
+ul { 
+  padding-left: 1.5rem; }

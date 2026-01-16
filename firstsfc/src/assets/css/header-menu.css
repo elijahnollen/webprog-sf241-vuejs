@@ -42,7 +42,7 @@ section {
     height: 15vh;
     min-height: 80px; 
     width: 100%;
-    background: white url('../svg/header.svg') no-repeat center / cover;
+    background: white url('@/assets/svg/header.svg') no-repeat center / cover;
     display: flex;
     justify-content: center;
     align-items: center;

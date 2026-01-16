@@ -2,7 +2,7 @@
 .background-container {
     min-height: 80vh;
     position: relative;
-    background: url('../svg/background.svg') no-repeat bottom center / cover;
+    background: url('@/assets/svg/background.svg') no-repeat bottom center / cover;
     display: flex;
     flex-direction: column;
 }

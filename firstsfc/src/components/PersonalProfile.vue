@@ -171,7 +171,7 @@
   </main>
 </template>
 
-<script>
+<script setup>
 import { ref, reactive } from 'vue';
 
 // Helper function to resolve paths from src/assets/img

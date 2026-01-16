@@ -9,15 +9,15 @@
 export default {
   data() {
     return {
-      name: 'Banana and Cabbage',
-      message: 'I like banana and Cabbage'
+      name: 'Strawberry and Carrots',
+      message: 'I like Strawberry and Carrots'
     }
   }
 };
 </script>
  
 <style>
-  .banana {
+  .strawberry {
     border: dashed black 1px;
     display: inline-block;
     margin: 10px;

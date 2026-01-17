@@ -9,7 +9,7 @@
       <a href="#skills">Skills</a>
       <a href="#hobbies">Hobbies</a>
       <a href="#goals">Goals</a>
-      <a href="#app">Guestbook</a>
+      <a href="#guestbook">Guestbook</a>
       <a href="#gallery">Picture Gallery</a>
       <a href="resources.html">Resources</a>
     </nav>
@@ -90,7 +90,7 @@
       </div>
     </section>
 
-    <section id="app" class="doodle-guestbook">
+    <section id="guestbook" class="doodle-guestbook">
       <header class="guestbook-header">
         <h3 class="skills-title"> Leave a little trace of yourself! </h3>
       </header>
@@ -146,22 +146,35 @@
       <h3 class="gallery-caption">Picture Gallery</h3>
     </section>
 
-    <div class="modal fade" id="moviesModal" tabindex="-1">
+    <div 
+      v-for="hobby in hobbiesList" 
+      :key="hobby.id" 
+      class="modal fade" 
+      :id="`${hobby.id}Modal`" 
+      tabindex="-1"
+    >
       <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title fw-bold">Movies/Series</h4>
+            <h4 class="modal-title fw-bold">{{ hobby.modalTitle }}</h4>
             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <div class="row g-5">
-                <div v-for="movie in movies" :key="movie.name" class="col-4">
+              <div v-if="getModalData(hobby.id).length > 0" class="row g-5"></div>
+                <div 
+                  v-for="item in getModalData(hobby.id)" 
+                  :key="item.name" 
+                  class="col-4"
+                >
                   <div class="movie-item text-center">
-                    <img :src="getImgUrl(movie.img)" :alt="movie.name">
-                    <p class="item-label">{{ movie.name }}</p>
+                    <img :src="getImgUrl(item.img)" :alt="item.name">
+                    <p class="item-label">{{ item.name }}</p>
                   </div>
                 </div>
+              </div>
+              <div v-else class="text-center py-5">
+                <h4 class="modal-title fw-bold">Coming Soon...</h4>
               </div>
             </div>
           </div>
@@ -174,19 +187,17 @@
 <script setup>
 import { ref, reactive } from 'vue';
 
-// Helper function to resolve paths from src/assets/img
 const getImgUrl = (name) => {
   return new URL(`../assets/img/${name}`, import.meta.url).href;
 };
 
-// 1. Timeline Logic
 const activeTimelineIndex = ref(null);
 const timelineScroll = ref(0);
 const educationData = [
-  { school: 'Bernardo College', date: '2018-2021', text: 'Spent most of junior high school here...' },
-  { school: 'Las Piñas National High School', date: '2021-2022', text: 'Completed 10th grade here...' },
-  { school: 'Philippine Christian University', date: '2022-2024', text: 'STEM strand student with highest honors...' },
-  { school: 'Asia Pacific College', date: '2024-2028', text: 'BSCS student focused on Cybersecurity...' }
+  { school: 'Bernardo College', date: '2018-2021', text: 'I spent most of my junior high school years here. From 7th grade to 9th grade, I was a consistent honor student. I also developed my writing skills by being a part of the school publication.' },
+  { school: 'Las Piñas National High School', date: '2021-2022', text: 'I moved to this school to finish my last year of junior high school. I successfully completed 10th grade and was recognized as an honor student for my academic work.' },
+  { school: 'Philippine Christian University', date: '2022-2024', text: 'For my senior high school, I chose the STEM strand. I was a consistent student with highest honors. I also joined an organization called Layag Films Production, where I was one of the talents.' },
+  { school: 'Asia Pacific College', date: '2024-2028', text: 'I am currently a college student taking a Bachelor of Science in Computer Science with a focus on cybersecurity and forensics. I am an SM Scholar and an honor student with a 3.88 GPA in my first year. I also hold a leadership role in an organization called the Junior Philippine Computer Society, where I serve as the Director of Operations.' }
 ];
 
 const handleTimelineMove = (e) => {
@@ -195,13 +206,15 @@ const handleTimelineMove = (e) => {
 };
 const resetTimeline = () => { activeTimelineIndex.value = null; };
 
-// 2. Data Lists
+
 const skillIcons = ['sap.png', 'powerbi.png', 'sql.png', 'python.png', 'css.png', 'html.png', 'linux.png', 'cisco-packet-tracer.png'];
 const hobbiesList = [
-  { id: 'movies', name: 'Movies', img: 'movies.png' },
-  { id: 'books', name: 'Books', img: 'books.png' },
-  { id: 'blogs', name: 'Blogs', img: 'blogs.png' }
+  { id: 'movies', name: 'Movies', title: 'Movies/Series', img: 'movies.png' },
+  { id: 'books', name: 'Books', title: 'Bookshelf', img: 'books.png' },
+  { id: 'blogs', name: 'Blogs', title: 'Blogs', img: 'blogs.png' }
 ];
+
+
 
 const goals = [
   { id: '01', title: 'SKILLS', class: 'card-skills', emojis: ['ツ','☺'], desc: 'Strengthen my <strong>technical and analytical</strong> skills.' },
@@ -214,10 +227,33 @@ const movies = [
   { name: 'Interstellar', img: 'interstellar.jpg' },
   { name: 'Little Women', img: 'little_women.jpeg' },
   { name: 'Anne with an E', img: 'anne_with_an_e.jpg' },
-  { name: 'Avatar', img: 'avatar.jpg' }
+  { name: 'Avatar', img: 'avatar.jpg' },
+  { name: 'Avengers: Infinity War', img: 'avengers_infinity_war.jpg' },
+  { name: 'Pride and Prejudice', img: 'pride_and_prejudice.jpg' },
+  { name: 'The Greatest Showman', img: 'the_greatest_showman.jpg' },
+  { name: 'Bar Boys', img: 'bar_boys.jpg },
 ];
 
-// 3. Guestbook Logic
+const books = [
+  { name: 'A Thousand Splendid Suns', img: 'a_thousand_splendid_suns.jpg' },
+  { name: 'The Pelican Brief', img: 'the_pelican_brief.jpg' },
+  { name: 'The Alchemist', img: 'Alchemist.jpg' },
+  { name: 'Life of Pi', img: 'life_of_pi.jpg' },
+  { name: 'The Five People You Meet in Heaven', img: 'the_five_people_you_meet_in_heaven.jpg' },
+  { name: 'The Book Thief', img: 'the_book_thief.jpg' },
+  { name: 'Si', img: 'si.jpg' },
+  { name: 'Anxious People', img: 'anxious_people.jpg' }
+];
+
+const blogs = [];
+
+const getModalData = (hobbyId) => {
+  if (hobbyId === 'movies') return movies;
+  if (hobbyId === 'books') return books;
+  if (hobbyId === 'blogs') return blogs;
+  return [];
+};
+
 const formData = reactive({ name: '', email: '', message: '' });
 const selectedSticker = ref(null);
 const stickerAssets = ['star.png', 'thinking.png', 'lol.png', 'in-love.png'];
@@ -228,7 +264,6 @@ const submitForm = () => {
   alert("dog");
 };
 
-// 4. Gallery Logic
 const currentRotation = ref(0);
 const galleryItems = [
   { src: 'minnie.jpg', type: 'vertical' },

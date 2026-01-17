@@ -230,7 +230,7 @@ const movies = [
   { name: 'Avengers: Infinity War', img: 'avengers_infinity_war.jpg' },
   { name: 'Pride and Prejudice', img: 'pride_and_prejudice.jpg' },
   { name: 'The Greatest Showman', img: 'the_greatest_showman.jpg' },
-  { name: 'Bar Boys', img: 'bar_boys.jpg }
+  { name: 'Bar Boys', img: 'bar_boys.jpg' }
 ];
 
 const books = [

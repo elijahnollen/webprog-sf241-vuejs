@@ -161,7 +161,7 @@
           </div>
           <div class="modal-body">
             <div class="container-fluid">
-              <div v-if="getModalData(hobby.id).length > 0" class="row g-5"></div>
+              <div v-if="getModalData(hobby.id).length > 0" class="row g-5">
                 <div 
                   v-for="item in getModalData(hobby.id)" 
                   :key="item.name" 
@@ -176,6 +176,7 @@
               <div v-else class="text-center py-5">
                 <h4 class="modal-title fw-bold">Coming Soon...</h4>
               </div>
+              </div> 
             </div>
           </div>
         </div>

@@ -256,7 +256,8 @@ const getModalData = (hobbyId) => {
 
 const formData = reactive({ name: '', email: '', message: '' });
 const selectedSticker = ref(null);
-const stickerAssets = ['star.png', 'thinking.png', 'lol.png', 'in-love.png'];
+const stickerAssets = ['star.png', 'thinking.png', 'lol.png', 'in-love.png', 'surprised.png', 'dizzy.png'];
+
 
 const submitForm = () => {
   if (!formData.name) return alert("Please enter your name!");

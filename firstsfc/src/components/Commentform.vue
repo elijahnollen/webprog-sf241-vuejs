@@ -1,5 +1,5 @@
 <template>
-    <div class="form-container">>
+    <div class="form-container">
       <h2>Leave a Comment</h2>
       <form @submit.prevent="submitComment">
         <div class="form-group">

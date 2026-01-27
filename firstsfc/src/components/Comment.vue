@@ -1,12 +1,10 @@
 <template>
-  <div class="comment-wrapper">
-    <h1>Comments</h1>
-    <ul>
-      <li v-for="comment in comments" :key="comment.id">
-        {{ comment.name }} {{ comment.comment }}
-      </li>
-    </ul>
-  </div>
+  <h1>Comments</h1>
+  <ul>
+    <li v-for="comment in comments" :key="comment.id">
+      {{ comment.name }} {{ comment.comment }}
+    </li>
+  </ul>
 </template>
 
 <script setup>
@@ -33,6 +31,4 @@ onMounted(() => {
     padding: 10px;
     background-color: lightyellow;
   }
-
-
 </style>

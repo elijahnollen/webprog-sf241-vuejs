@@ -26,8 +26,8 @@ onMounted(() => {
 <style scoped>
   li {
     border: dashed black 1px;
-    display: block; 
-    margin: 10px 0;
+    display: inline-block;
+    margin: 10px;    
     padding: 10px;
     background-color: lightyellow;
   }

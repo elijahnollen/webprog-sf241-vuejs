@@ -4,9 +4,10 @@
     
     <div class="food-container">
       <food-item/>
-      <comment-form/>
-      <comment/>
     </div>
+    
+    <comment-form/>
+    <comment/>
 
     <hr> 
     <PersonalProfile/>

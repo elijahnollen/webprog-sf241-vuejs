@@ -2,12 +2,12 @@
   <div id="app">
     <h1>My Personal Profile, Fruits, and Vegetables</h1>
     
-    <div class="food-container">
+    <comment class="food-container">
       <food-item/>
-    </div>
-
       <comment-form/>
       <comment/>
+    </comment>
+
 
     <hr> <PersonalProfile/>
   </div>
@@ -19,15 +19,16 @@
 <style>
 
 @font-face {
-    font-family: 'Shantell Sans'; 
-    src: url('https://cdn.jsdelivr.net/gh/elijahnollen/web-programming-practice@main/home/fonts/ShantellSans%5BBNCE%2CINFM%2CSPAC%2Cital%2Cwght%5D.woff2') format('woff2-variations'),
-         url('https://cdn.jsdelivr.net/gh/elijahnollen/web-programming-practice@main/home/fonts/ShantellSans%5BBNCE%2CINFM%2CSPAC%2Cital%2Cwght%5D.woff2') format('woff2');
-    font-weight: 300 800;
-}
+      font-family: 'Shantell Sans'; 
+          src: url('https://cdn.jsdelivr.net/gh/elijahnollen/web-programming-practice@main/home/fonts/ShantellSans%5BBNCE%2CINFM%2CSPAC%2Cital%2Cwght%5D.woff2') format('woff2-variations'),
+                   url('https://cdn.jsdelivr.net/gh/elijahnollen/web-programming-practice@main/home/fonts/ShantellSans%5BBNCE%2CINFM%2CSPAC%2Cital%2Cwght%5D.woff2') format('woff2');
+                       font-weight: 300 800;
+                       }
 
-.food-container {
-  display: flex;
-  flex-wrap: wrap;
+                       .food-container {
+                         display: flex;
+                           flex-wrap: wrap;
+                           }
 }
 
 

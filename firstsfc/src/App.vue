@@ -8,6 +8,7 @@
     
     <comment-form/>
     <comment/>
+    <rest-api/> 
 
     <hr> 
     <PersonalProfile/>
